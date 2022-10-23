@@ -21,3 +21,25 @@ var slide_hero = new Swiper(".slide-principal", {
     disableOnInteraction: false
   }
 });
+
+// Quando clicar nos outros mudar
+const allFilters = document.querySelectorAll('.js-nav-games li a')
+const tabPane = document.querySelector('.tab-pane-games');
+
+// Evento de clique
+allFilters.forEach((filter, index) => {
+  filter.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    allFilters.forEach(item => {
+      item.classList.remove('active');
+    })
+
+    tabPane.forEach(tab => {
+      tab.classList.remove('active');
+    })
+
+    tabPane[index].classList.add('acive')
+    filter.classList.add('active')
+  })
+})
