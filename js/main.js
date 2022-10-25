@@ -43,3 +43,21 @@ allFilters.forEach((filter, index) => {
     filter.classList.add('active')
   })
 })
+
+// Open modal
+const btnOpenModal = document.querySelector('.js-open-modal');
+// Fechar modal
+const btnFecharMOdal = document.querySelector('.js-close')
+
+// event click para abrir modal
+btnOpenModal.addEventListener('click', (event) => {
+  event.preventDefault();
+  let tagHtml = document.documentElement;
+  tagHtml.classList.add('show-modal');
+})
+
+// event click para fechar modal
+btnFecharMOdal.addEventListener('click', () => {
+  let tagHtml = document.documentElement;
+  tagHtml.classList.remove('show-modal');
+})
