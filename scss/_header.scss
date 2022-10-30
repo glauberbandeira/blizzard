@@ -45,6 +45,13 @@ header {
                         color: #ffffff;
                         img {
                             margin-left: 1.4rem;
+                            transition: transform .3s;
+                        }
+                        &.active {
+                            color: $primary-default;
+                            img {
+                                transform: rotate(180deg);
+                            }
                         }
                     }
                 }
@@ -72,9 +79,32 @@ header {
     backdrop-filter: blur(12px);
     width: 100%;
     padding-top: 9.6rem;
-    display: none;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: all .3s;
     &.active {
-        display: block;
+        opacity: 1;
+        transform: translateY(0%);
+        pointer-events: all;
+    }
+    &.esportes {
+        .area-menu {
+            ul {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 6.4rem;
+                li {
+                    a {
+                        width: 100%;
+                        height: 23.7rem;
+                        .icon {
+                            width: 100%;
+                            height: 17.9rem;
+                        }
+                    }
+                }
+            }
+        }
     }
     .area-menu {
         padding-top: 3.8rem;
